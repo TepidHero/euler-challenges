@@ -1,13 +1,28 @@
 def isPalindrome(a):
-	for x,y in zip(a[:],a[::-1]):
-		if x!=y:
+	number=str(a)
+	length=len(number)
+	if length==5:
+		if number[0]==number[4]:
+			if number[1]==[3]:
+				return True
+			else:
+				return False
+		else:
 			return False
-	return True
-	
-works=0
-for x in range(100,10,-1):
-	for y in range(100,10,-1):
+	else:
+		if number[0]==number[5]:
+			if number[1]==number[4]:
+				if number[2]==number[3]:
+					return True
+				else:
+					return False
+			else:
+				return False
+		else:
+			return False
+works=[]
+for x in range(1000,100,-1):
+	for y in range(1000,100,-1):
 		if isPalindrome(x*y):
-			works=(x*y)
-			break
-print (works)
+			works.append(x*y)
+print (max(works))
